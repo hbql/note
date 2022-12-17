@@ -1,0 +1,41 @@
+git常用命令：
+查看版本信息：git --version 
+查看git配置信息：git config --global  --list
+
+设置用户名：git config --global user.name hbql
+设置邮箱（可以是虚拟邮箱）：git config --global user.email hbql1995@163.com 
+注：安装git后需要设置一次用户和邮箱，该用户和github的登录名无关
+
+初始化本地库，让git具有管理权限：git init
+注：该命令会在成一个隐藏文件(.git)，在window下可通过勾选(查看-隐藏的项目)来显示
+
+查看本地库状态：git status
+
+将工作区单个文件添加到暂存区：git add 文件名
+将工作区所有文件添加到暂存区：git add .
+文件未提交到暂存区，撤销工作区修改：git checkout -- 文件名
+
+将暂存区的文件提交到本地库：git commit -m "提交说明" 文件名
+文件未提交到本地库，撤销commit：git reset HEAD 文件名
+删除暂存区的文件，工作区文件不会删除：git rm --cached 文件名
+
+查看简略版提交日志：git reflog
+查看详细提交日志：git log
+
+文件以提交到本地库，回退上一个版本：git reset --hard HEAD^ 
+版本切换：git reset --hard 版本号 或 git reset --soft 版本号
+注：--hard会修改工作区的代码，--soft不会修改工作区的代码
+
+查看当前分支：git branch -v
+创建分支：git branch 分支名
+切换分支：git checkout 分支名
+合并分支：git merge 分支名
+
+查看别名：git remote -v
+创建别名：git remote add 别名 链接
+
+推送本地库代码至远端库：git push 别名 分支名 或 git push URL 分支名
+拉取远端库代码至本地库：git pull 别名 分支名 或 git pull URL 分支名
+克隆远端苦代码：git clone URL
+
+ssh密钥生成：ssh-keygen -t rsa -C "邮箱名"
